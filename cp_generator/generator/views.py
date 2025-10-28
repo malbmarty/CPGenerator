@@ -85,12 +85,16 @@ class GenerateProposalPDFView(View):
         context['total_cost_all'] = total_cost_all
 
         html_string = render_to_string("generator/pdf_template.html", context)
-        pdf = HTML(string=html_string, base_url=settings.STATIC_ROOT).write_pdf(
+        pdf = HTML(
+            string=html_string,
+            base_url=request.build_absolute_uri('/')
+        ).write_pdf(
             stylesheets=[
                 CSS(filename=os.path.join(settings.STATIC_ROOT, "css/styles.css")),
-                CSS(string='@page { size: 1920px 1080px; margin: 0}')
+                CSS(string='@page { size: 1920px 1080px; margin: 0 }')
             ]
-            )
+        )
+
 
         response = HttpResponse(pdf, content_type="application/pdf")
         response["Content-Disposition"] = f'inline; filename="{proposal.title}.pdf"'

@@ -2,26 +2,26 @@ body {
     width: 1920px;
 }
 
-/* @font-face {
+@font-face {
     font-family: 'Bebas Neue';
-    src: url("../fonts/Bebas_Neue.ttf") format('truetype');
+    src: url("/static/fonts/Bebas_Neue.ttf") format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Mulish';
-    src: url("../fonts/Mulish-Regular.ttf") format('truetype');
+    src: url("/static/fonts/Mulish-Regular.ttf") format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Saar SP Demo';
-    src: url("../fonts/SaarSPDemo.otf") format('truetype');
+    src: url("/static/fonts/SaarSPDemo.otf") format('truetype');
     font-weight: normal;
     font-style: normal;
-} */
+}
 
 /* @font-face {
     font-family: 'Bebas Neue';
@@ -52,7 +52,7 @@ body {
 .page-about-us {
     width: 1920px;
     height: 1080px;
-    background-image: url("../images/about_us.png");
+    background-image: url("/static/images/about_us.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -61,7 +61,7 @@ body {
 .page-choose-us {
     width: 1920px;
     height: 1080px;
-    background-image: url("../images/choose_us.png");
+    background-image: url("/static/images/choose_us.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -70,7 +70,7 @@ body {
 .page-partners {
     width: 1920px;
     height: 1080px;
-    background-image: url("../images/partners.png");
+    background-image: url("/static/images/partners.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -79,7 +79,7 @@ body {
 .page-team {
     width: 1920px;
     height: 1080px;
-    background-image: url("../images/team.png");
+    background-image: url("/static/images/team.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -88,7 +88,7 @@ body {
 .page-contacts {
     width: 1920px;
     height: 1080px;
-    background-image: url("../images/contacts.png");
+    background-image: url("/static/images/contacts.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -100,7 +100,7 @@ body {
     position: absolute;
     left: 1058px;
     top: 878px;
-    background-image: url("../images/trend.png");
+    background-image: url("/static/images/trend.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
