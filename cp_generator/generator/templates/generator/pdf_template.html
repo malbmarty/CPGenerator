@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title></title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+  <div class="page-title">
+    <div class="title-top">
+      <div class="title-info">
+        <div class="title-logo">
+          <img 
+            src="{% static 'images/1fc_logo.png' %}"
+            alt="1fc logo"
+            class="fc-logo"
+          >
+          <p><span>Digital agency </span>First IT Company</p>
+        </div>
+        <div class="title-contacts">
+          <p class="phone">+7 (904) 626-13-71</p>
+          <p class="social">TG/WA</p>
+        </div>
+      </div>
+      <p class="title-h1">Коммерческое</p>
+      <p class="title-h2">предложение</p>
+    </div>
+    <div class="subheader">
+      <p class="subheader-label">{{ label }}</p>
+      <p class="subheader-subject">{{ subject }}</p>
+    </div>
+    <div class="details">
+      <p>Юр. адрес: 690003, г. Владивосток, ул. Верхнепортовая, д. 44, оф. 2</p>
+      <p>ОГРНИП: 324253600050762</p>
+      <p>ИНН: 254010481210</p>
+      <p>Расчетный счет: 40802810520020006893 АО "АЛЬФА-БАНК"</p>
+    </div>
+  </div>
+  <!-- Страница "about_us" -->
+  <div class="page page-about-us"></div>
+
+  <!-- Страница "choose_us" -->
+  <div class="page page-choose-us"></div>
+
+  {% for stage in stages %}
+    <div class="page-stage">
+      <div class="title-info">
+        <div class="title-logo">
+          <img 
+            src="{% static 'images/1fc_logo.png' %}"
+            alt="1fc logo"
+            class="fc-logo"
+          >
+          <p><span>Digital agency </span>First IT Company</p>
+        </div>
+        <div class="title-contacts">
+          <p class="phone">+7 (904) 626-13-71</p>
+          <p class="social">TG/WA</p>
+        </div>
+      </div>
+      <p class="stage-header">Этапы реализации</p>
+      <div class="stages">
+        {% for stg in stages %}
+        {% if stg.stage == stage.stage %}
+        <div class="stage-item  active">
+          <div class="stage-name">
+            <img 
+              src="{% static 'images/order_active.png' %}"
+              alt="num"
+              class="fc-num"
+              width="30px"
+              height="30px"
+            >
+            <p>{{ stg.stage.name }}</p>
+          </div>
+          <img 
+            src="{% static 'images/minus.png' %}"
+            alt="item"
+            class="fc-item"
+            width="30px"
+            height="30px"
+          >
+        </div>
+        {% else %}
+        <div class="stage-item">
+          <div class="stage-name">
+            <img 
+              src="{% static 'images/order_deactive.png' %}"
+              alt="1fc num"
+              class="fc-num"
+              width="30px"
+              height="30px"
+            >
+            <p>{{ stg.stage.name }}</p>
+          </div>
+          <img 
+            src="{% static 'images/plus.png' %}"
+            alt="1fc item"
+            class="item"
+            width="30px"
+            height="30px"
+          >
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="substages">
+        <div class="substages-list">
+          {% for sub in stage.sub_stages %}
+          <div class="substage-item">
+            <div class="substage-info">
+              <img 
+                src="{% static 'images/pointer.png' %}"
+                alt="pointer"
+                class="pointer"
+                width="10px"
+                height="14px"
+              >
+              <div class="substage-discribe">
+                <span>{{ sub.name }}</span>
+                <p>{{ sub.description }}</p>
+              </div>
+            </div>
+            <div class="substage-metrics">
+                <p>{% if sub.duration_days %}{{ sub.duration_days|floatformat:"-1" }} дней{% else %}-{% endif %}</p>
+                <p>{% if sub.cost %}{{ sub.cost|floatformat:0 }} ₽{% else %}-{% endif %}</p>
+            </div>
+          </div>
+          {% if not forloop.last %}
+            <div class="line"></div>
+          {% endif %}
+          {% endfor %}
+        </div>
+        <div class="substage-itog">
+          <p>Итого</p>
+          <div class="itog-metrics">
+              <p>{{ stage.total_days|floatformat:"-1" }} дней</p>
+              <p>{{ stage.total_cost|floatformat:0 }} ₽</p>
+          </div>
+        </div>
+      </div>
+      {% if forloop.last %}
+        <div class="itog">
+          <p class="itog-title">Общие итоги&nbsp;<span>нашего сотрудничества:</span></p>
+          <div class="itog-metrics">
+            <p class="itog-during">{{ total_days_all|floatformat:"-1" }} дней</p>
+            <p class="itog-cost">{{ total_cost_all|floatformat:0 }} ₽</p>
+          </div>
+        </div>
+        <img 
+            src="{% static 'images/trend.png' %}"
+            alt="1fc trend"
+            class="itog-trend"
+            width="160px"
+            height="122px"
+          >
+      {% endif %}
+      <div class="details">
+        <p>Юр. адрес: 690003, г. Владивосток, ул. Верхнепортовая, д. 44, оф. 2</p>
+        <p>ОГРНИП: 324253600050762</p>
+        <p>ИНН: 254010481210</p>
+        <p>Расчетный счет: 40802810520020006893 АО "АЛЬФА-БАНК"</p>
+      </div>
+    </div>
+  {% endfor %}
+
+  <!-- Страница "partners" -->
+  <div class="page page-partners"></div>
+  
+  <!-- Страница "team" -->
+  <div class="page page-team"></div>
+  
+  <!-- Страница "contacts" -->
+  <div class="page page-contacts"></div>
+</body>
+</html>
