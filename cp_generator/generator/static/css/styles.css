@@ -23,7 +23,7 @@ body {
     font-style: normal;
 } */
 
-@font-face {
+/* @font-face {
     font-family: 'Bebas Neue';
     src: url('file:///home/deploy/CPGenerator/cp_generator/staticfiles/fonts/Bebas_Neue.ttf') format('truetype');
     font-weight: normal;
@@ -42,7 +42,7 @@ body {
     src: url('file:///home/deploy/CPGenerator/cp_generator/staticfiles/fonts/SaarSPDemo.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
-}
+} */
 
 .page {
     width: 100%;
