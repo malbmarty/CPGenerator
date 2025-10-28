@@ -5,6 +5,7 @@ from weasyprint import HTML
 from django.views.generic.base import TemplateView
 from .models import CommercialProposal,Service
 from weasyprint import HTML, CSS
+from django.conf import settings
 
 
 class PdfPageView(TemplateView):
@@ -83,7 +84,7 @@ class GenerateProposalPDFView(View):
         context['total_cost_all'] = total_cost_all
 
         html_string = render_to_string("generator/pdf_template.html", context)
-        pdf = HTML(string=html_string, base_url=request.build_absolute_uri()).write_pdf(stylesheets=[CSS(string='@page { size: 1920px 1080px; margin: 0}')])
+        pdf = HTML(string=html_string, base_url=settings.STATIC_ROOT).write_pdf(stylesheets=[CSS(string='@page { size: 1920px 1080px; margin: 0}')])
 
         response = HttpResponse(pdf, content_type="application/pdf")
         response["Content-Disposition"] = f'inline; filename="{proposal.title}.pdf"'
