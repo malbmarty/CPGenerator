@@ -86,8 +86,10 @@ class GenerateProposalPDFView(View):
 
         html_string = render_to_string("generator/pdf_template.html", context)
         pdf = HTML(string=html_string, base_url=settings.STATIC_ROOT).write_pdf(
-            CSS(filename=os.path.join(settings.STATIC_ROOT, "css/styles.css")),
-            stylesheets=[CSS(string='@page { size: 1920px 1080px; margin: 0}')]
+            stylesheets=[
+                CSS(filename=os.path.join(settings.STATIC_ROOT, "css/styles.css")),
+                CSS(string='@page { size: 1920px 1080px; margin: 0}')
+            ]
             )
 
         response = HttpResponse(pdf, content_type="application/pdf")
