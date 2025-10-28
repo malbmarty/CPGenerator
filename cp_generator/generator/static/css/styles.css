@@ -2,7 +2,7 @@ body {
     width: 1920px;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'Bebas Neue';
     src: url("../fonts/Bebas_Neue.ttf") format('truetype');
     font-weight: normal;
@@ -19,6 +19,27 @@ body {
 @font-face {
     font-family: 'Saar SP Demo';
     src: url("../fonts/SaarSPDemo.otf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('file:///home/deploy/CPGenerator/cp_generator/staticfiles/fonts/Bebas_Neue.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mulish';
+    src: url('file:///home/deploy/CPGenerator/cp_generator/staticfiles/fonts/Mulish-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Saar SP Demo';
+    src: url('file:///home/deploy/CPGenerator/cp_generator/staticfiles/fonts/SaarSPDemo.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
